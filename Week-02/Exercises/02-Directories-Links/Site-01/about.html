@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>About Us Site 1</title>
+    <meta name="description" content="Method 1 - Page Names in File Name">
+  </head>
+
+  <body>
+    <!-- Place your Nav Links Here -->
+    <nav>
+      <!-- use UL LI and A for Nav Links within our NAV tag -->
+      <ul>
+        <!-- "#" vs index.html
+        "#"" takes me to the top of the page
+        "index.html" takes me to that page (which is this one, so it essentially refreshes it)
+        Since this isn't a long page, the dummy link seems to do the same thing.
+        However, on a longer page (contact.html), "#" would scroll (more of a teleport) to the top,
+        while "index.html" would still refresh (which ofc takes you to the top as well [in this scenario. Remember ids can be used to jump to certain parts of the page]).
+        and if you look closely, the tab handle refreshes with "index.html"
+        but doesn't with "#"-->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>About Us</h1>
+    <!-- Bonus - Place Images Here -->
+    <img src="img/chicken3.jpeg" alt="chicken">
+  </body>
+</html>
