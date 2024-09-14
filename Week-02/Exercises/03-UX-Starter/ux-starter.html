@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Semantic Markup</title>
+        <meta
+        name="description"
+        content="Starter template for using semantic HTML elements to organize our code before we begin CSS layouts next week."
+        >
+        <meta name="keywords" content="HTML, Semantic HTML, Tutorial">
+        <meta name="author" content="NYU">
+
+        <!-- Internal CSS -->
+        <!-- When using an external CSS file, I won't need to include internal CSS within <style> tags in the HTML file.
+        Instead, I would link to the external CSS file using a <link> tag in the <head> section.
+        This approach separates styling from content, making my HTML cleaner and the styles easier to manage and maintain.
+        Since I do not know much CSS, the only CSS I do use is inside the HTML's <style> tag -->
+        <style>
+            /* The comments look like this since I am in CSS land now. */
+
+            /* The selector (h1) and declarations (only text-align: center) are what make up the CSS rule (or rule set). */
+            /* The declaration block is what is within the braces, which can have one or more declarations. */
+            
+            /* 'selector' is just a broad CSS term. Here are the types: */
+            /* h1 is an 'element selector', which targets all h1 elements */
+            /* .centered is a 'class selector' (which I can name anything I want). */
+            /* h1.centered is a combination of the two, known as a 'combined selector'. */
+
+            /* h1 is an element selector. This applies styles to all h1 elements on the page. 
+            No class selector is specified here because I want to target all h1 elements.
+            Since there is only one <h1></h1>, this style applies to that one element. */
+            h1 {
+                text-align: center;  /* Declaration => CSS property: value (aka CSS property-value pair). */
+                /* Each declaration is in the form of a CSS property-value pair. These pairs define the styles applied to the elements selected by the selector. */
+            }
+            ul { 
+                list-style-type: square;  /* Sets up a default styling for ul elements since this is just an element selector and not a class selector. */
+            }
+            ul.subnav {
+                list-style-type: disc;
+            }
+            ul.footer {
+                list-style-type: none;  /* Overrides the default ul styling that is applied as long as I specify that a specific ul uses this .footer class. */
+            }
+            ol {
+                list-style-type: decimal-leading-zero;
+            }
+            /* I can also do this: 
+            .centered {
+                text-align: center;
+            }
+            */
+        </style>
+    </head>
+
+    <body>
+        <!-- Here is some starter content. We will mark this up to contain a header, nav, article, section, aside, footer and more! Bonus points if you use even more semantic HTML elements in your HW this week. -->
+        <!-- We will be marking this up as our main menu -->
+        <header>
+            <!-- <h1></h1> = tags | <h1>Foot Locker 2</h1> = the entire element -->
+            <h1>Foot Locker 2</h1>
+
+            <!-- Main Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Clothing</a></li>
+                    <li><a href="#">Footwear</a></li>
+                </ul>
+            </nav>
+            <!-- End Main Navigation -->
+        </header>
+
+        <!-- Lets assume we are on a product page for some sort of shoe type -->
+        <!-- Since we are in the shoe section, we might want to help the user choose other shoe types easily with a sidebar -->
+
+        <!-- Sidebar with seconday navigation -->
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Sandals</a></li>
+                    <li><a href="#">Flip-Flops</a></li>
+                    <li><a href="#">Flats</a></li>
+                    <li><a href="#">Heels</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <!-- Subnav for different sneaker types -->
+                    <nav>
+                        <ul class="subnav">
+                            <li><a href="#">Cross-Trainers</a></li>
+                            <li><a href="#">Running</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Slip-Ons</a></li>
+                        </ul>
+                    </nav>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main page content -->
+        <!-- Here is where we would show thumbnail images for all of our running shoes. We are going to use placeholder kittens from https://placekitten.com/. We will reuse the same thumbnail and description 6 times.  -->
+        <!-- Title for our page, remember, we have already used an H1, and we should only have 1 H1 per page! -->
+        <h2>Sneakers</h2>
+
+        <!-- Individual image, with caption using figure and figcaption -->
+        <figure>
+            <img src="http://placekitten.com/200/200" alt="kitten">
+            <figcaption>
+                <!-- This text should be emphasized -->
+                <p>This is a shoe, a <em>fancy</em> shoe.</p>
+                <!-- Price on new line, make this text strong -->
+                <p><strong>$70</strong></p>
+                <!-- A link to the individual product page, again on a new line -->
+                <a href="#">Shoe #1</a>
+                <!-- End Individual image, with caption using figure and figcaption -->
+            </figcaption>
+        </figure>
+
+        <!-- Copy figure stuff 5 times, make sure it is all contained in the wrapper for our main page content! -->
+        <figure>
+            <img src="http://placekitten.com/200/200" alt="kitten">
+            <figcaption>
+                <!-- This text should be emphasized -->
+                <p>This is a shoe, a <em>fancy</em> shoe.</p>
+                <!-- Price on new line, make this text strong -->
+                <p><strong>$120</strong></p>
+                <!-- A link to the individual product page, again on a new line -->
+                <a href="#">Shoe #2</a>
+                <!-- End Individual image, with caption using figure and figcaption -->
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="http://placekitten.com/200/200" alt="kitten">
+            <figcaption>
+                <!-- This text should be emphasized -->
+                <p>This is a shoe, a <em>fancy</em> shoe.</p>
+                <!-- Price on new line, make this text strong -->
+                <p><strong>$30</strong></p>
+                <!-- A link to the individual product page, again on a new line -->
+                <a href="#">Shoe #3</a>
+                <!-- End Individual image, with caption using figure and figcaption -->
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="http://placekitten.com/200/200" alt="kitten">
+            <figcaption>
+                <!-- This text should be emphasized -->
+                <p>This is a shoe, a <em>fancy</em> shoe.</p>
+                <!-- Price on new line, make this text strong -->
+                <p><strong>$100</strong></p>
+                <!-- A link to the individual product page, again on a new line -->
+                <a href="#">Shoe #4</a>
+                <!-- End Individual image, with caption using figure and figcaption -->
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="http://placekitten.com/200/200" alt="kitten">
+            <figcaption>
+                <!-- This text should be emphasized -->
+                <p>This is a shoe, a <em>fancy</em> shoe.</p>
+                <!-- Price on new line, make this text strong -->
+                <p><strong>$10</strong></p>
+                <!-- A link to the individual product page, again on a new line -->
+                <a href="#">Shoe #5</a>
+                <!-- End Individual image, with caption using figure and figcaption -->
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="http://placekitten.com/200/200" alt="kitten">
+            <figcaption>
+                <!-- This text should be emphasized -->
+                <p>This is a shoe, a <em>fancy</em> shoe.</p>
+                <!-- Price on new line, make this text strong -->
+                <p><strong>$120</strong></p>
+                <!-- A link to the individual product page, again on a new line -->
+                <a href="#">Shoe #6</a>
+                <!-- End Individual image, with caption using figure and figcaption -->
+            </figcaption>
+        </figure>
+        <!-- End Main page content  -->
+
+        <!-- And finally, a footer for our page!  -->
+        <!-- social links, We will cover font awesome icons soon -->
+        <footer>
+            <nav>
+                <p>Social Media</p>
+                <ul class="footer">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </nav>
+            &copy; Foot Locker 2
+        </footer> 
+    </body>
+</html>
