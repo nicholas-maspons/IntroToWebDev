@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Avocado Toast Recipe Page</title>
+        <style>
+            h1 {
+                font-family: monospace;
+                text-align: center;
+                color: green;
+            }
+            img.center {
+                width: 50%;
+            }
+            ul.footer {
+                list-style-type: none;
+            }
+            ul.sublist {
+                list-style-type: square;
+            }
+            .nobullet {
+                list-style-type: none;
+            }
+            .optional {
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>My Recipe Site</h2>
+            <nav>
+                <ul class="nobullet">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <input type="search" placeholder="Search recipes">
+                        <button role="button">Search Icon*</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <hr>
+        <h1>Avocado Toast w/ Eggs</h1>
+        <figure>
+            <img class="center" src="https://www.allrecipes.com/thmb/8NccFzsaq0_OZPDKmf7Yee-aG78=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AvocadoToastwithEggFranceC4x3-bb87e3bbf1944657b7db35f1383fabdb.jpg" alt="avocado toast with egg">
+            <figcaption>
+                <!-- One day I will position the caption text to the left directly under the image. -->
+                <p>Avocado Toast w/ Egg</p>
+            </figcaption>
+        </figure>
+        <p>
+            Avocado toast is a healthy breakfast.<br>
+            It contains a decent amount of <u>fiber</u>, <u>potassium</u>, <u>vitamin E</u>, <u>and iron</u>.<br>
+            It is easy to make and you can also add more ingredients, like a tomato slice or fried egg.<br>
+            And we will be adding a fried egg to our avocado toast.
+        </p>
+        <h3>Ingredients:</h3>
+            <ul>
+                <li>Bread (2 slices)</li>
+                <li>Avocado (1 whole)</li>
+                <li>Eggs (2)</li>
+                <li>Butter or Cooking Spray</li>
+                <!-- i and em have visual effects, making them non-semantic. But choosing between them is a semantic choice, as em conveys emphasis and meaning while i is more about styling. -->
+                <li class="nobullet optional">Optional:</li>
+                <ul class="sublist optional">
+                    <li>Salt</li>
+                    <li>Pepper</li>
+                </ul>
+            </ul>
+        <h3>Instructions:</h3>
+        <ol>
+            <li>
+                Heat pan and then place butter (or spray your cooking spray). Make sure that the melted butter (or spray) coats the entire surface. This helps prevent the eggs from sticking.
+            </li>
+            <li>
+                Once the pan is coated with melted butter (or spray), crack the eggs into the pan separately, keeping the yolks intact. Let the eggs cook.
+            </li>
+            <li>
+                Toast the bread slices, but remove them so that they are slightly toasted with a bit of crunch. (Or toast them as much as you want).
+            </li>
+            <li>
+                Cut the avocado in half and spread half of the avocado on each slice of bread. 
+            </li>
+            <li>
+                By now, the eggs should be ready to flip. If they don't move easily, let them cook a bit longer. When ready, use a spatula to separate the egg whites if they've joined forces, then flip them.
+            </li>
+            <li>
+                Let the eggs cook for just under a minute. (Or cook for longer if you want a firmer yolk). Once done, place them on top of the avocado-coated bread slices. 
+            </li>
+            <li>
+                <i>Add salt, pepper. Or don't as this is optional.</i>
+            </li>
+            <li>
+                You are done.
+            </li>
+        </ol>
+        <hr>
+        <footer>
+            <nav>
+                <p>Media Links</p>
+                <ul class="footer">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </nav>
+            <p><strong>&copy; My Recipe Site</strong></p>
+        </footer> 
+    </body>
+</html>
