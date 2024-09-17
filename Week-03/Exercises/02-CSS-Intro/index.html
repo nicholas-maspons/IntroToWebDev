@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CSS Intro</title>
+        <!-- Internal Style Sheet: 
+        Styles are defined within this codument, affecting only this page. 
+        This is why we use external style sheets to use across multiple pages. -->
+        <style> 
+            /* A unversal selector is commonly used to zero out the browser default margins and padding */
+            /* This usually starts at the top */
+            * { 
+                margin: 0;
+                padding: 0;
+            }
+            /* Tag selector aka type or element selectors apply to every instance of that tag on the page */
+            div {
+                background-color: fuchsia;
+            }
+            /* 1rem = 16px */
+            p {
+                margin-top: 1rem;
+                /* Border is shorthand | Syntax: border: [border-width] [border-style] [border-color]; */
+                /* Note: my use of border-width overrides the border-width specified in the shorthand. 
+                This is also due to the order in which they appear. 
+                In this example, if my border-width declaration appeared first,
+                it would be redundant due to be overriden. */
+                border: 1px dashed red;
+                padding: 2rem 1rem;  /* First value is top and bottom, while second is left and right */
+                border-width: 1px 5px 10px 20px;  /* The 4 values change: top, right, bottom, left. Think like a clock. */
+                color: blue;
+                font-family: Arial, Helvetica;  /* First is the one we really want, which is followed by backup fonts. */
+            }
+            a {
+                color: green;
+                text-decoration: overline;
+            }
+            /* This is a pseudo-class selector. This is more specific than a tag and applies to only links that have been visited */
+            a:visited {
+                /* This works, but only once since. 
+                The browser is quite persistent about remembering that I visited.
+                So just add another # for each time I want to see it work. 
+                It is currently set to work. Once it is clicked, add another #. */
+                color: red;  
+            }
+            /* Class selectors always start with '.' inside out style sheet */
+            .silly_text {
+                font-family: cursive; /* is a browser default*/
+                text-decoration: wavy underline;
+                color: white;
+            }
+            /* id selector */
+            #really_important {
+                font-weight: 600;
+                font-size: x-large;
+                font-style: oblique;
+                line-height: 1.5;
+                text-transform: capitalize;
+            }
+            /* The only occurrence of span was overwritten by inline styling that turns it black*/
+            span {
+                color: pink;
+            }
+        </style>
+    </head>
+    <!-- Only CSS written in body should be inline styles -->
+    <body>
+        <!-- div is just a box around content. It is a division of content -->
+        <div class="silly_text">Testing 123</div>
+        
+        <!-- a::visited is weighted more heavily then class names -->
+        <p>A p tag to add some spacing and to <a href="#####">talk</a> about margins and padding more...</p>
+        <div>Another div</div>
+        <p id="really_important">
+            Lorem ipsum odor amet, consectetuer adipiscing elit. <span style="color: black;">Nostra</span> urna lectus proin per varius non. 
+            Facilisis facilisi elit vivamus fermentum, accumsan quam. Inceptos cras cubilia adipiscing velit neque proin suscipit diam. Pellentesque a fringilla non metus facilisis metus. 
+            Nisi porttitor purus augue euismod volutpat vestibulum iaculis curabitur. In cras dictum ornare dictumst per libero. Ullamcorper nibh duis dignissim ut proin finibus non aliquam aliquet.
+        </p>
+    </body>
+</html>
