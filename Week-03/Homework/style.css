@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Baskervville";
+    font-size: 0;  /* Make 0 to remove gaps, then fix font-size in a more specific selector (im confused) */
+    text-align: center;
+    background-color: lightgray;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 60px;
+}
+h2 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+p {
+    font-size: 20px;
+    width: 750px;
+    padding-top: 25px;
+    margin: 0 auto;  /* Doing just auto seems to set top and bottom to 0 anyway */
+    text-align: left;
+}
+/*  navbar css */
+.navbar-container {
+    width: 100%;
+    background-color: darkgrey;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+
+}
+nav ul li {
+    text-align: center;
+    font-size: 30px;
+    width: 150px;
+    height: auto;
+    color: black;
+    display: inline-block;
+    padding: 10px 50px;
+}
+nav ul li a {  /* I want the nav bar links to be black all the time no matter what */
+    color: black;
+    text-decoration: none;
+}
+li a:visited {
+    color: black;  
+}
+
+/*  ingredients css */
+ul.three-columns {
+    column-count: 3;
+    list-style-type: none;
+}
+section ul li {
+    font-size: 20px;
+}
+
+/* instructions css */
+section ol {
+    font-size: 20px;
+    width: 750px;
+    margin: 0 auto;
+    text-align: left;
+    list-style-type: decimal-leading-zero;
+}
+section ol li {
+    font-size: 20px;
+}
+
+/* hr css for footer */
+hr {
+    margin: 40px 20px 15px 20px;
+}
+
+/* cookies css */
+.cookie-container {
+    min-height: 150px;
+    min-width: 700px; /* doesnt seem to do anything the contents take up more than the minimum, so if i keep increasing i will see. */
+    background-color: lightgray;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    position: fixed;
+    /* top: 50%; places the top of the container at the center, and bottom does the opposite
+    So none of these are actually centered. So I must use transform. */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* box-shadow: horizontal-offset vertical-offset blur-radius spread-radius color; */
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+}
+.cookie-container p {
+    font-family: "Comic Neue";
+    font-size: 30px;
+    text-align: center;
+}
+.cookie-container button {
+    font-family: "Comic Neue";
+    padding: 10px 25px;
+    margin: 25px 100px;
+    border-width: 2px;
+    border-color: black;
+}
+
+button:hover {
+    background-color: darkgray;
+    cursor: pointer;
+}
