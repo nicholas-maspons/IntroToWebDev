@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+/* font-family: "Kaushan Script", cursive; */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* this is how we get a full sized fixed centered background */
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Apply default font style at the body tag and all children elements will 
+inherit it unless we override it with another style further down */
+/* CSS styles apply in the order the come in.
+Internal CSS code would override this since it comes after in the head, which can be overriden by inline styling. */
+body {
+    font-family: 'Kaushan Script', cursive;
+}
+
+/* NAVIGATION */
+header {
+    width: 80%;
+    padding: 0 10%;
+    height: 50px;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+    /* divs that come after another will stack. My polaroid div should cover my header, so we stop that. */
+    /* increase z index to pull items forward. */
+    z-index: 10;
+    background-color: gray;
+    /* flexbox properties */
+    /* flexbox container property. "alright evrything inside this I want to stack next to each other. */
+    display: flex;
+    flex-direction: row; /* default flex direction is row */
+    justify-content: space-between;
+    /* there are 4 points, and now i see the middle 2 not the first 2 */
+    align-items: center; 
+    background: url('../img/fancy-cushion.png');
+}
+header h1 {
+    color: #ccc;
+}
+nav ul {
+    /* Flexbox is only inherited by elements one level down (immediate children). 
+    <ul> is 2 levels down and <li> is 3 levels down, so I had to restate. 
+    All of them are child elements inside <header>, but only <h1> and <nav> 
+    are immediate children, which is where flexbox applies. */
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    background-color: rgba(140, 140, 140, 0.1);
+}
+nav li {
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    width: 120px;
+}
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    /* Now I don't need to only hover over the word to get the pointer and be able to click the link. (Inline by default) */
+    display: block;
+    /* We always define our trainsition on the initial style */
+    transition: all 1s;
+}
+/* pseudo class selector */
+nav a:hover {
+    /* these properties will animate because of the transition above */
+    background-color: #eee;
+    color: black;
+}
+nav a.active {
+    background-color: white;
+    color: red;
+}
+
+/* GALLERY */
+.container {
+    width: 900px;
+    margin: 100px auto;  /* 0 is top and bottom */
+    /* when we use inline block to stack things, we have to 
+    zero out the font size on the container element */
+    font-size: 0;
+}
+.polaroid {
+    /* Was 300px but I had to subtract 20 from both sides */
+    width: 260px;
+    margin: 20px;
+    display: inline-block;
+    /* WHENEVER YOU WANT A CHILD ELEMENT TO POSITION WITHIN A PARENT ELEMENT,
+    YOU HAVE TO RELATIVE POSITION THE PARENT */
+    position: relative;
+}
+/* Whenever you style an image, it's usually best practice to 
+make the image take up 100% of its parent element and then
+give the parent a width and height */
+.polaroid img {
+    width: 100%;
+    height: auto;
+    /* Border shorthand is 1-width, 2-style, 3-color */
+    border: 10px solid #ccc;
+    border-bottom-width: 45px;
+}
+.polaroid p {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 14px;
+    width: 280px;
+    text-align: center;
+    color: #333;
+}
+
+/* TRANSFORMS */
+.scaleUp {
+    transform: scale(1.5);
+    /* Puts it in front of the header */
+    z-index: 10;
+}
+.scaleX {
+    /* commented out to show another way */
+    /* transform: scaleX(2); */
+    /* 10 z-index places the 2nd polaroid in front of the 1st, which was supposed to happen anyway.
+    But since I increased the 1st's z-index, I have to increase this one's (the 2nd) as well. */
+    z-index: 10;
+    /* twice as wide in the x, but same remains the same in the y. Just like the commented out version. */
+    transform: scale(2, 1);
+}
+.scaleY {
+    transform: scale(1, 2);
+}
+.skewX {
+    /* takes degrees. goes counterclockwise */
+    transform: skewX(-20deg);
+}
+.skewY {
+    transform: skewY(-20deg);
+}
+.skewBoth {
+    transform: skew(10deg, 30deg);
+}
+/* X and Y are 3D rotations, while Z is 2D */
+/* Just imagine the axes. */
+.rotX {
+    /* flipped over horizontal x axis */
+    /* I can't see it at 90deg, which makes sense */
+    transform: rotateX(180deg);
+}
+.rotY {
+    transform: rotateY(180deg);
+}
+.rotZ {
+    /* rotates how I thought it would originally. Rotates about the center */
+    transform: rotateZ(120deg);
+}
+.rotateLeft {
+    transform: rotate(-20deg);
+    transition: all 5s ease-in-out;
+}
+.rotateLeft:hover {
+    transform: rotate(20deg);
+    cursor: pointer;
+}
+.skewHover {
+    transform: skewX(-30deg);
+    transition: all 5s ease;
+}
+.skewHover:hover {
+    transform: skew(30deg);
+    cursor: pointer;
+}
+.scaleHover {
+    transform: scale(0.5);
+    transition: all 5s ease-in;
+}
+.scaleHover:hover {
+    transform: scale(1.5);
+}
+.colorSwap {
+    filter: grayscale(100%);
+    transition: all 2s ease-out;
+}
+.colorSwap:hover {
+    /* we can only change things that have been defined ^ */
+    filter: grayscale(0);
+    cursor: pointer;
+}
