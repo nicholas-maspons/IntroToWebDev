@@ -1,0 +1,98 @@
+/* GLOBAL STYLES */
+* {
+    /* this includes padding and border widths in total width */
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+img {
+    /* makes sure img is filling in whatever container it's in */
+    width: 100%;
+    height: auto;
+}
+
+/* I want all of my first children/direct descendants to be affected. Flexbox does not consider any further nested elements. */
+.container {
+    display: flex;
+    flex-direction: row;
+    /* nowrap keeps items in a single line and doesn't start a new line when there is no space */
+    flex-wrap: wrap;
+    /* Some styles so we can see our container */
+    border: 1px solid purple;
+    background-color: rgba(255, 0, 255, 0.3);
+    min-height: 400px;
+
+
+}
+
+.item {
+    border: 1px solid cornflowerblue;
+    background-color: rgba(0, 0, 255, 0.3);
+    width: 23%;
+    height: 300px;
+}
+
+.center {
+    /* The inner div is the parent of the content, being the numbers. */
+    /* Note: Since all elements in this specific example have both .item and .center, 
+    I can also put 'display: flex' in .item instead. It can go in either one. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-start {
+    /* This is the default, but we are stating it anyway for good practice. */
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.justify-even {
+    justify-content: space-evenly;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+/* List of flex box container properties ends here. */
+
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
+
+/* Screens smaller than 768px will get these styles */
+@media screen and (max-width: 768px) {
+    /* All the styles are inherited. I don't have to redfine everything in container. */
+    .container {
+        flex-direction: column;
+    }
+    .self-stretch {
+        height: 300px;
+        width: auto;
+    }
+}

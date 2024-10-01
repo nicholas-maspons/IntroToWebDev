@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive 101</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script>
+            function toggleMenu() {
+                document.getElementById('main-nav').classList.toggle('show')
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1 class="brand"><a href="#">Logo</a></h1>
+            
+            <!-- Hide on desktop, show on mobile -->
+            <!-- What is going on: 
+            The hamburger menu icon can't be seen unless the screen is small enough.
+            This is because .mobile-menu goes from 'display: none' to 'display: block'. 
+            At the same time, the <nav> goes to 'display: none', so the hamburger icon becomes visible while the links become hidden.
+            The <nav> was never explcitly set to 'display: none' for larger screens, so it shows by default, unlike the hamburger icon, which was set to 'display: none'.
+            When clicked, the Javascript function toggles the .show class, whose effects are conveyed to the <nav> via its id, changing its display to 'block', thus opening the mobile nav menu. 
+            I see it as id="main-nav" being functionally the same as class="show" but with a toggle feature. 
+            Note: the .show is in the mobile device media query, so it is being toggled in there. -->
+            <span class="mobile-menu" onclick="toggleMenu()">&#8801;</span>
+            <nav id="main-nav">
+                
+                <!-- .menu class changes as the screen size decreases to make the links stack vertically to fit mobile devices better. 
+                This is because the styles for .menu in the mobile device media query override the default desktop styles that apply outside of any media queries. -->
+                <ul class="menu">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                    <li><a href="#">Link 6</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <!-- thumb means thumbnail -->
+            <!-- .thumb has 3 states: desktop (the default style), and tablet and mobile device styles (which are both defined in the media queries). -->
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+            <div class="thumb"><img src="./img/lucy.jpg"></div>
+        </main>
+    </body>
+</html>
