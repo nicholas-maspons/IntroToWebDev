@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* these are the individual cells */
+        th, td {
+            border: 2px solid gray;
+            width: 33%;
+            /* by default. only the th is centered while td is left aligned */
+            text-align: center;
+        }
+        
+        td {
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        td:first-child {
+            border-left: none;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        .last_row td {
+            border-bottom: none;
+        }
+        
+        tr:nth-child(even) {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- wraps all things tabley -->
+    <table>
+        <!-- thead and tbody are not needed. they are more organizational or semantic -->
+        <!-- labels -->
+        <thead>
+            <!-- table row -->
+            <tr>
+                <!-- table header -->
+                 <!-- 3 th's = 3 columns -->
+                <th>Name</th>  
+                <th>Age</th>
+                <th>Major</th>
+            </tr>
+        </thead>
+
+        <!-- data -->
+        <tbody>
+            <tr>
+                <!-- tabular data -->
+                <td>Tony</td>
+                <td>54</td>
+                <td>Kickin Ass</td>  
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>21</td>
+                <td>Dolphins</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>21</td>
+                <td>Dolphins</td>
+            </tr>
+            <tr class="last_row">
+                <td>Bob</td>
+                <td>1</td>
+                <td>Nothing</td>   
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
