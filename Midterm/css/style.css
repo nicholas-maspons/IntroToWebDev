@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* i dont need this but it gives me a reason to leave this informative comment */
+    /* box-sizing: border-box; */
+    /* content-box --> border-box | Without this, .container will overflow by 10px * 2 (border) + 2rem * 2 (padding) because it has width: 100%. */
+    /* DEAR future me: that comment is outdated. I don't use any padding or borders in my final product */
+} 
+
+body {
+    background-color: #d1d1d9;
+}
+
+/* Start of header */
+header {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color:#008000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+}
+
+.icon {
+    font-size: xx-large;
+}
+/* End of header */
+
+/* Start of nav */
+nav {
+
+    background-color: #008000;
+    width: auto;
+    height: 4rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav ul {
+    /* border: 1px solid black; */
+    width: 420px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+nav ul li {
+    width: 140px;
+    height: 100%;
+    /* border: 1px solid black; */
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color:#d1d1d9;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    background-color: #005700;
+    color: #f0f0f0; 
+}
+.active {
+    background-color: #005700;
+    color: #f0f0f0;
+}
+/* End of nav */
+
+/* Start of modal */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    pointer-events: none;
+}
+
+.overlay:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay > div {
+    border: 2px solid black;
+    margin: 8.25rem auto;
+    padding: 1rem;
+    background-color: #d1d1d9;
+    width: 200px;
+    height: auto;
+    position: relative;
+}
+
+.close {
+    height: 20px;
+    width: 20px;
+    background-color: #d1d1d9;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+.close:hover {
+    background-color: black;
+    color: white;
+}
+
+/* End of modal */
+
+
+/* Start of graphs */
+.container {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    width: 1000px;
+    height: auto; /* The user can choose what and how many graphs they want. So I'll use auto. */
+    /* each graph is 480px wide. so the remaining 40px is placed between graphs */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-between; /* main axis (x) */
+    align-items: center; /* cross axis (y) */
+}
+
+.graph {
+    /* border: 1px solid black; */
+    
+    /* 3:2 */
+    width: 480px;
+    height: 320px;
+
+    /* Nice margin to match the horiz space between the graphs. I do this for other dimensions */
+    margin-bottom: 40px;
+}
+
+.container img {
+    /* try all combos of 100% and auto. It is interesting. idk what comment to leave. 100% seems to be prioritized. */
+    width: 100%;
+    height: auto;
+}
+/* End of graphs */
+
+table {
+    border-collapse: collapse;
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+th, td {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    text-align: center;
+}
+th:last-child, td:last-child {
+    border-right: 1px solid black;
+}
+tbody:last-child {
+    border-bottom: 1px solid black;
+}
+th {
+    background-color: #d1d1d9;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #d1d1d9; 
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-color: #d1d1d9;
+    }
+
+    .container {
+        width: 750px;
+    }
+
+    .graph {
+        /* 3:2 */
+        width: 360px;
+        height: 240px;
+
+        margin-bottom: 30px;    
+    }
+    table {
+        width: 750px;
+    }
+}
+    
+/* Phone */
+@media only screen and (max-width: 767px) {
+    body {
+        background-color: #d1d1d9;
+    }
+
+    .container {
+        width: 420px;
+        flex-direction: column;
+    }
+    .graph {
+    
+        /* 3:2 */
+        width: 390px;
+        height: 260px;
+
+        margin-bottom: 15px;    
+    }
+    table {
+        width: 420px;
+    }
+    .too-wide {
+        overflow-x: auto;
+        /* not sure why this was needed but it is. this is prob the only line of code i dont understand */
+        display: block;
+    }
+}
