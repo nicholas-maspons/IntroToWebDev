@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Food User Input</title>
+    <!-- no css -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- not supposed to be done this way. but why? -->
+    <!-- <link rel="script" href="script.js"> -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>How many grams of avocado did you eat?</h1>
+    <br>
+    <!-- for in label must be the same as id from input ('click-to-focus') ->
+    so, if i click on the label text, it will auto select the input field so the user can type. 
+    These are used together bc the user needs to know what is meant to go in the input box -->
+    <label for="grams">Grams:</label>
+    <!-- id is to identify unique elements on the page. In this case it will be used to target this element with js -->
+    <!-- name is for what column this data will go in an excel sheet for example. There is more to this tho. It's for form data submission -->
+    <!-- just make for name id the same. but it is name attribute that doesnt HAVE to be -->
+    <input type="number" name="grams" id="grams">
+    <button type="button" id="gramsInputBtn">Calculate Nutrition</button>
+
+    <p>I was gonna make something to show the calulations appear in p tags like in class. 
+        But i spent too much time leaving comments and im tired. 
+        So please look in the console with inspect and type any number. thanks</p>
+    
+</body>
+</html>
