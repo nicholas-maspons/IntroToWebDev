@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Same colors from midterm */
+/* use random shades of white later */
+body {
+    background-color: #d1d1d9;
+    font-family: "Roboto";
+}
+
+.navbar-bg {
+    background-color: #008000;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+}
+
+.navbar-link-color {
+    color: #d1d1d9;
+}
+/*
+.plus-padding {
+    
+    padding: 0.5rem 2rem 0 2rem;
+    
+}
+*/
+
+/* Custom styling for navbar links */
+.nav-link {
+    color: #d1d1d9; 
+}
+
+/* Hover styles for navbar links */
+.nav-link:hover {
+    background-color: #005700;
+    color: #f0f0f0; 
+}
+
+/* Active link styling */
+.nav-link.active {
+    background-color: #005700;
+    color: #f0f0f0; 
+}
+
+
+.graph-container {
+    height: 320px;
+}
+
+/* primary for food seconfary for ecipe */
+/* Log food */
+.modal .btn-primary {
+    background-color: #005700; 
+    color: #f0f0f0; 
+}
+.modal .btn-primary:hover {
+    background-color: #003d00;
+    color: #f0f0f0; 
+}
+
+/* Recipe */
+.modal .btn-secondary {
+    background-color: #d1d1d9;  
+    color: #005700;
+}
+.modal .btn-secondary:hover {
+    background-color: #b3b3b6; 
+    color: #003d00;
+}
+
+
+/* for stats page */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container {
+    margin: 20px;
+    overflow-x: auto;
+}
+
+.table-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Just color for the button where the modal takes you. since they are on seperate files they can just share*/
+.dark-green {
+    background-color: #005700;
+    color: #f0f0f0;
+}
